@@ -22,10 +22,4 @@ public class BaseVMFragment extends BaseFragment {
 
         return mBinding;
     }
-
-    protected ViewDataBinding binding(LayoutInflater inflater, ViewGroup container, int layoutId, BaseViewModel viewModel, Object store) {
-        mBinding = DataBindingUtil.inflate(inflater, layoutId, container, false);
-        mBinding.setVariable(BR.viewModel, viewModel);
-        return mBinding;
-    }
 }

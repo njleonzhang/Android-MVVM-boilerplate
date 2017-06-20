@@ -1,12 +1,11 @@
 package com.leon.mvvm.ui.login;
 
 
-import android.app.Activity;
 import android.databinding.ObservableField;
 import android.widget.Toast;
 
 import com.leon.mvvm.data.remote.NetworkObserver;
-import com.leon.mvvm.ui.MainActivity;
+import com.leon.mvvm.ui.main.MainActivity;
 import com.leon.mvvm.ui.base.mvvm.BaseVMActivity;
 import com.leon.mvvm.ui.base.mvvm.BaseViewModel;
 import com.leon.mvvm.ui.login.model.LoginRequest;

@@ -44,4 +44,5 @@ ext {
     rxLifecycleVersion = "2.0.1"
     rxPermissionVersion = "0.9.4@aar"
     stethoVersion = '1.5.0'
+    bkVersion = '8.5.1'
 }

@@ -71,6 +71,9 @@ dependencies {
     compile "com.facebook.stetho:stetho:$rootProject.stethoVersion"
     compile "com.facebook.stetho:stetho-okhttp3:$rootProject.stethoVersion"
 
+    compile "com.jakewharton:butterknife:$rootProject.bkVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.bkVersion"
+
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
     compile 'com.github.njleonzhang:SimpleItemDecoration:v0.0.2'

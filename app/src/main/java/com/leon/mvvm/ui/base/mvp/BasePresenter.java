@@ -6,6 +6,7 @@ import com.leon.mvvm.data.DataManager;
 import com.leon.mvvm.ui.base.BaseActivity;
 import com.leon.mvvm.ui.base.BaseFragment;
 
+
 /**
  * Created by leon on 2017/4/25.
  */

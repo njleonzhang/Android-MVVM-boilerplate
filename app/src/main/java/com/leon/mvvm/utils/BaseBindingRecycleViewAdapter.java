@@ -30,8 +30,9 @@ public class BaseBindingRecycleViewAdapter<T> extends RecyclerView.Adapter<BaseB
         setDataSource(dataSource);
     }
 
-    public void setDataSource(List<T> dataSource) {
+    public BaseBindingRecycleViewAdapter<T> setDataSource(List<T> dataSource) {
         mDataSource = dataSource;
+        return this;
     }
 
     public List<T> getDataSource() {

@@ -22,4 +22,5 @@
     <color name="black">#000000</color><!--黑色 -->
 
     <color name="color_click_white">#e5e5e5</color>
+    <color name="color_divider">#d9d9d9</color>
 </resources>

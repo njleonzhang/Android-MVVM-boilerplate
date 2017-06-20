@@ -8,6 +8,9 @@ import com.leon.mvvm.data.remote.RetrofitServiceUtil;
 import com.leon.mvvm.data.utils.RxUtil;
 import com.leon.mvvm.ui.login.model.LoginRequest;
 import com.leon.mvvm.ui.login.model.LoginResponse;
+import com.leon.mvvm.ui.main.home.model.HomeTestBean;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import okhttp3.MediaType;
@@ -46,6 +49,10 @@ public class DataManager {
 
     public Observable<LoginResponse> login(LoginRequest loginRequest) {
         return preProcess(mRemoteDataSource.login(loginRequest));
+    }
+
+    public Observable<List<HomeTestBean>> getTestList() {
+        return preProcess(mRemoteDataSource.getTestList());
     }
 }
 
