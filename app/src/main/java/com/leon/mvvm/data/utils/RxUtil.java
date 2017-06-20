@@ -1,7 +1,10 @@
 package com.leon.mvvm.data.utils;
 
+import com.google.gson.reflect.TypeToken;
 import com.leon.mvvm.data.constants.Constants;
 import com.leon.mvvm.data.model.BaseResponse;
+
+import java.lang.reflect.Constructor;
 
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,9 +25,20 @@ public class RxUtil {
     public static <T> Function<BaseResponse<T>, T> unwrapResponse() {
         return baseResponse -> {
             if (baseResponse.getCode().equals(Constants.SUCCESS_CODE)) {
-                // 返回数据成功, 如果服务器没有返回data字段，则这里return null，会导致空指针异常。
-                // 所以对于data可能是空的请求，不应该用这个函数处理。
-                return baseResponse.getData();
+                T data = baseResponse.getData();
+                if (data == null) {
+                    Class<?> cls = new TypeToken<T>(){}.getClass();
+                    Constructor<?> constructor = null;
+                    try {
+                        constructor = cls.getConstructor();
+                        data = (T) constructor.newInstance();
+                    } catch (Exception e) {
+                        // 没有data返回字段的请求，要求T一定要有default的构造函数
+                        throw new WrongResponseException(e.getMessage());
+                    }
+                }
+
+                return data;
             } else if (baseResponse.getCode().equals(Constants.USER_NOT_LOGGED_IN)) {
                 // auth token过期
                 throw new UserNotLoginException(baseResponse.getMsg());
@@ -46,6 +60,12 @@ public class RxUtil {
 
     public static class UnknownServerException extends Exception {
         public UnknownServerException(String message) {
+            super(message);
+        }
+    }
+
+    public static class WrongResponseException extends Exception {
+        public WrongResponseException(String message) {
             super(message);
         }
     }
