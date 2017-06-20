@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#38acff</color>
+    <color name="colorPrimaryDark">#2d9ae7</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color> <!-- 透明-->
+    <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="yellow">#FFFF00</color><!--黄色 -->
+    <color name="orange">#FFA500</color><!--橙色 -->
+    <color name="magenta">#FF00FF</color><!--红紫色 -->
+    <color name="red">#FF0000</color><!--红色 -->
+    <color name="linen">#FAF0E6</color><!--亚麻色 -->
+    <color name="salmon">#FA8072</color><!--鲜肉色 -->
+    <color name="ghost_white">#F8F8FF</color><!--幽灵白 -->
+    <color name="beige">#F5F5DC</color><!--米色 -->
+    <color name="light_gray">#D3D3D3</color><!--亮灰色 -->
+    <color name="chocolate">#D2691E</color><!--巧可力色 -->
+    <color name="silver">#C0C0C0</color><!--银色 -->
+    <color name="gray">#808080</color><!--灰色 -->
+    <color name="blue">#0000FF</color><!--蓝色 -->
+    <color name="black">#000000</color><!--黑色 -->
+
+    <color name="color_click_white">#e5e5e5</color>
+</resources>
