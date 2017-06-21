@@ -6,7 +6,7 @@ Android MVVM boilerplate inspired by [android-boilerplate](https://github.com/ri
 It's similar to `android-boilerplate`, differences:
 * `Presenter` to `ViewModel`
 * `EventBus` to `RxBus`
-* shareReferenceHelper is not proxied by data manager, but a static tools.
+* `shareReferenceHelper` is not proxied by data manager, but a static tools.
 
 ## Tech-stack
 * Data-Binding
@@ -16,6 +16,12 @@ It's similar to `android-boilerplate`, differences:
 
 ## Code Organization
 ![](https://cdn.rawgit.com/njleonzhang/Android-MVVM-boilerplate/master/assets/code_organization.png)
+
+* binding —> binding adapters for databinding
+* data —> Model(network, database)
+* ui —> View and ViewModel(ui and business logic)
+* util —> common tools
+* widget —> common widget
 
 ## UML
 ![](https://cdn.rawgit.com/njleonzhang/Android-MVVM-boilerplate/master/assets/uml2.png)
