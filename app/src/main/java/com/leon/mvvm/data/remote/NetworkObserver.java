@@ -3,7 +3,7 @@ package com.leon.mvvm.data.remote;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.leon.mvvm.data.utils.RxUtil;
+import com.leon.mvvm.utils.RxUtil;
 import com.leon.mvvm.ui.base.BaseActivity;
 import com.leon.mvvm.utils.ActivityUtil;
 import com.leon.mvvm.widget.loading.ILoading;

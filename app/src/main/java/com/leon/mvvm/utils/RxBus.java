@@ -1,4 +1,4 @@
-package com.leon.mvvm.data.utils;
+package com.leon.mvvm.utils;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;

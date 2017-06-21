@@ -20,8 +20,6 @@ public class DashboardFragment extends BaseVMFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         DashboardViewModel viewModel = new DashboardViewModel(getContext(), this);
         ViewDataBinding binding = binding(inflater, container, R.layout.fragment_dashboard, viewModel);
-
-        viewModel.init(binding);
         return binding.getRoot();
     }
 }

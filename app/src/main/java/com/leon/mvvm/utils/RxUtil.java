@@ -1,6 +1,5 @@
-package com.leon.mvvm.data.utils;
+package com.leon.mvvm.utils;
 
-import com.google.gson.reflect.TypeToken;
 import com.leon.mvvm.data.constants.Constants;
 import com.leon.mvvm.data.model.BaseResponse;
 
@@ -22,12 +21,11 @@ public class RxUtil {
             .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public static <T> Function<BaseResponse<T>, T> unwrapResponse() {
+    public static <T> Function<BaseResponse<T>, T> unwrapResponse(Class<T> cls) {
         return baseResponse -> {
             if (baseResponse.getCode().equals(Constants.SUCCESS_CODE)) {
                 T data = baseResponse.getData();
                 if (data == null) {
-                    Class<?> cls = new TypeToken<T>(){}.getClass();
                     Constructor<?> constructor = null;
                     try {
                         constructor = cls.getConstructor();

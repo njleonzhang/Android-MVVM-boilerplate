@@ -27,7 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center_vertical"
-        android:background="@drawable/bg_click_white">
+        android:background="@drawable/bg_click_white"
+        android:onClick="@{() -> viewModel.itemClicked(obj)}">
 
         <ImageView
             android:layout_width="52dp"

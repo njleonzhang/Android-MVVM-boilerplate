@@ -1,4 +1,4 @@
-package com.leon.mvvm.data.utils;
+package com.leon.mvvm.utils;
 
 import android.content.Context;
 import android.util.TypedValue;

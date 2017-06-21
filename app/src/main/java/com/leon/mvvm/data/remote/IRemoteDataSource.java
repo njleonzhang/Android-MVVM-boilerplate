@@ -2,6 +2,7 @@ package com.leon.mvvm.data.remote;
 
 import com.leon.mvvm.BuildConfig;
 import com.leon.mvvm.data.model.BaseResponse;
+import com.leon.mvvm.data.model.EmptyResponse;
 import com.leon.mvvm.ui.login.model.LoginRequest;
 import com.leon.mvvm.ui.login.model.LoginResponse;
 import com.leon.mvvm.ui.main.home.model.HomeTestBean;
@@ -23,4 +24,7 @@ public interface IRemoteDataSource {
 
     @GET("tests/")
     Observable<BaseResponse<List<HomeTestBean>>> getTestList();
+
+    @GET("empty/")
+    Observable<BaseResponse<EmptyResponse>> getEmpty();
 }

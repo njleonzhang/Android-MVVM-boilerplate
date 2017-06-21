@@ -3,9 +3,10 @@ package com.leon.mvvm.data;
 import com.leon.mvvm.data.local.ILocalDataSource;
 import com.leon.mvvm.data.local.LocalDataSource;
 import com.leon.mvvm.data.model.BaseResponse;
+import com.leon.mvvm.data.model.EmptyResponse;
 import com.leon.mvvm.data.remote.IRemoteDataSource;
 import com.leon.mvvm.data.remote.RetrofitServiceUtil;
-import com.leon.mvvm.data.utils.RxUtil;
+import com.leon.mvvm.utils.RxUtil;
 import com.leon.mvvm.ui.login.model.LoginRequest;
 import com.leon.mvvm.ui.login.model.LoginResponse;
 import com.leon.mvvm.ui.main.home.model.HomeTestBean;
@@ -13,9 +14,6 @@ import com.leon.mvvm.ui.main.home.model.HomeTestBean;
 import java.util.List;
 
 import io.reactivex.Observable;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 
 /**
  * Created by leon on 2017/3/11.
@@ -42,9 +40,14 @@ public class DataManager {
         return mDataManager;
     }
 
-    public <T> Observable<T> preProcess(Observable<BaseResponse<T>> observable) {
+    private <T> Observable<T> preProcess(Observable<BaseResponse<T>> observable) {
         return observable.compose(RxUtil.applyScheduler())
-            .map(RxUtil.unwrapResponse());
+            .map(RxUtil.unwrapResponse(null));
+    }
+
+    private <T> Observable<T> preProcess(Observable<BaseResponse<T>> observable, Class<T> cls) {
+        return observable.compose(RxUtil.applyScheduler())
+            .map(RxUtil.unwrapResponse(cls));
     }
 
     public Observable<LoginResponse> login(LoginRequest loginRequest) {
@@ -53,6 +56,10 @@ public class DataManager {
 
     public Observable<List<HomeTestBean>> getTestList() {
         return preProcess(mRemoteDataSource.getTestList());
+    }
+
+    public Observable<EmptyResponse> getEmpty() {
+        return preProcess(mRemoteDataSource.getEmpty(), EmptyResponse.class);
     }
 }
 

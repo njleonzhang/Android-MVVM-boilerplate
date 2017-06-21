@@ -5,11 +5,12 @@ import android.databinding.ViewDataBinding;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import com.github.qing.itemdecoration.LinearDividerItemDecoration;
 import com.leon.mvvm.R;
 import com.leon.mvvm.data.remote.NetworkObserver;
-import com.leon.mvvm.data.utils.Tools;
+import com.leon.mvvm.utils.Tools;
 import com.leon.mvvm.databinding.FragmentHomeBinding;
 import com.leon.mvvm.ui.base.BaseFragment;
 import com.leon.mvvm.ui.base.mvvm.BaseViewModel;
@@ -73,5 +74,9 @@ public class HomeViewModel extends BaseViewModel {
         return reqType.equals(TYPE_HOUSE_KEEPER_REQ_HELP)
             ? R.drawable.ic_house_keeper_help_circle
             : R.drawable.ic_house_keeper_repair_circle;
+    }
+
+    public void itemClicked(HomeTestBean bean) {
+        Toast.makeText(mActivity, "you get bean here and you can do anything. show its Id as sample: " + bean.getId(), Toast.LENGTH_LONG).show();
     }
 }

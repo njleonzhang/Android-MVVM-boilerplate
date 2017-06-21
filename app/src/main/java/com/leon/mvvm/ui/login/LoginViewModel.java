@@ -33,7 +33,7 @@ public class LoginViewModel extends BaseViewModel {
                     super.onHandleSuccess(loginResponse);
                     Toast.makeText(mActivity,
                         "OK + cellphone:" + cellphone.get() + "  password " + password.get(),
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
                     ActivityUtil.gotoPage(mActivity, MainActivity.class);
                 }
             });
