@@ -1,5 +1,5 @@
 # Android-MVVM-boilerplate
-Android MVVM boilerplate inspired by [android-boilerplate](https://github.com/ribot/android-boilerplate)
+Android MVVM boilerplate inspired by [android-boilerplate](https://github.com/ribot/android-boilerplate) and powered by [data-binding](https://developer.android.com/topic/libraries/data-binding/index.html)
 
 ## Archetcture
 ![](https://cdn.rawgit.com/njleonzhang/Android-MVVM-boilerplate/master/assets/archtecure.png)
