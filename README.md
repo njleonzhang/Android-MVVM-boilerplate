@@ -3,7 +3,7 @@ Android MVVM boilerplate inspired by [android-boilerplate](https://github.com/ri
 
 ## Archetcture
 ![](https://cdn.rawgit.com/njleonzhang/Android-MVVM-boilerplate/master/assets/archtecure.png)
-It's similar to `android-boilerplate`, differences:
+It's similar to [android-boilerplate](https://github.com/ribot/android-boilerplate#architecture), differences:
 * `Presenter` to `ViewModel`
 * `EventBus` to `RxBus`
 * `shareReferenceHelper` is not proxied by data manager, but a static tools.
