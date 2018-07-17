@@ -15,7 +15,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface IRemoteDataSource {
-    String BASE_URL = BuildConfig.DEBUG ? "http://rapapi.org/mockjsdata/20993/" : "";
+    String BASE_URL = BuildConfig.DEBUG ? "http://rap2api.taobao.org/app/mock/22156/" : "";
     int TIMEOUT = 10;
     int READ_TIMEOUT = 10;
 

@@ -77,6 +77,6 @@ public class HomeViewModel extends BaseViewModel {
     }
 
     public void itemClicked(HomeTestBean bean) {
-        Toast.makeText(mActivity, "you get bean here and you can do anything. show its Id as sample: " + bean.getId(), Toast.LENGTH_LONG).show();
+        Toast.makeText(mActivity, "you are here and can do anything. show item Id as sample: " + bean.getId(), Toast.LENGTH_LONG).show();
     }
 }

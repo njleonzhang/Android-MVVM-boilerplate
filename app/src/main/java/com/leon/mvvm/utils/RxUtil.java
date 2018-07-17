@@ -21,12 +21,13 @@ public class RxUtil {
             .observeOn(AndroidSchedulers.mainThread());
     }
 
+    @SuppressWarnings("unchecked")
     public static <T> Function<BaseResponse<T>, T> unwrapResponse(Class<T> cls) {
         return baseResponse -> {
             if (baseResponse.getCode().equals(Constants.SUCCESS_CODE)) {
                 T data = baseResponse.getData();
                 if (data == null) {
-                    Constructor<?> constructor = null;
+                    Constructor<?> constructor;
                     try {
                         constructor = cls.getConstructor();
                         data = (T) constructor.newInstance();

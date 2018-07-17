@@ -16,7 +16,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="testEmptyResponseRequest"
+            android:text="test Empty Response Request"
             android:onClick="@{() -> viewModel.test()}"/>
     </LinearLayout>
 </layout>

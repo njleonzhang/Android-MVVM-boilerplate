@@ -50,6 +50,11 @@ public class DataManager {
             .map(RxUtil.unwrapResponse(cls));
     }
 
+    private Observable<EmptyResponse> preEmptyProcess(Observable<BaseResponse<EmptyResponse>> observable) {
+        return preProcess(observable, EmptyResponse.class);
+    }
+
+
     public Observable<LoginResponse> login(LoginRequest loginRequest) {
         return preProcess(mRemoteDataSource.login(loginRequest));
     }
@@ -59,7 +64,7 @@ public class DataManager {
     }
 
     public Observable<EmptyResponse> getEmpty() {
-        return preProcess(mRemoteDataSource.getEmpty(), EmptyResponse.class);
+        return preEmptyProcess(mRemoteDataSource.getEmpty());
     }
 }
 
