@@ -33,8 +33,10 @@ It's similar to [android-boilerplate](https://github.com/ribot/android-boilerpla
 ## Details
 
 ### NetWork
+Leverage `Retrofit2` and `RxJava2` to parse response and handle error(including loading) in common place, we just deal with data in business logic.
 
 ### recycle view binding
+No need to write adapter agian and agian, with data-binding and [BaseBindingRecycleViewAdapter](https://github.com/njleonzhang/Android-MVVM-boilerplate/blob/master/app/src/main/java/com/leon/mvvm/utils/BaseBindingRecycleViewAdapter.java), we just need provide a layout file and the array of data, then we get a recycleView
 
 ### Activity and Fragment binding
-
+Activity and Fragment are wrappered and easy to initialize.
