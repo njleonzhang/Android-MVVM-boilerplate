@@ -31,6 +31,7 @@ public class MainActivity extends BaseCActivity {
 
         mNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         mViewPager.addOnPageChangeListener(mOnPageChangeListener);
+        mViewPager.setOffscreenPageLimit(3);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = item -> {

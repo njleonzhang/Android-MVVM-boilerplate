@@ -10,6 +10,8 @@ import android.widget.Toast;
 import com.github.qing.itemdecoration.LinearDividerItemDecoration;
 import com.leon.mvvm.R;
 import com.leon.mvvm.data.remote.NetworkObserver;
+import com.leon.mvvm.ui.main.notification.model.RxBusTestEvent;
+import com.leon.mvvm.utils.RxBus;
 import com.leon.mvvm.utils.Tools;
 import com.leon.mvvm.databinding.FragmentHomeBinding;
 import com.leon.mvvm.ui.base.BaseFragment;
@@ -30,6 +32,7 @@ public class HomeViewModel extends BaseViewModel {
     private FragmentHomeBinding mBinding;
     private RecyclerView mRecyclerView;
     private BaseBindingRecycleViewAdapter<HomeTestBean> mAdapter;
+    private List<HomeTestBean> mList;
 
     public HomeViewModel(Context context, BaseFragment fragment) {
         super(context, fragment);
@@ -44,12 +47,21 @@ public class HomeViewModel extends BaseViewModel {
             .subscribe(new NetworkObserver<List<HomeTestBean>>(mActivity) {
                 @Override
                 protected void onHandleSuccess(List<HomeTestBean> homeTestBeen) {
-                    initList(homeTestBeen);
+                    mList = homeTestBeen;
+                    initList();
                 }
+            });
+
+        RxBus.getInstance().filteredObservable(RxBusTestEvent.class)
+            .compose(mFragment.bindToLifecycle())
+            .subscribe(rxBusTestEvent -> {
+                Toast.makeText(mActivity, "delete one item", Toast.LENGTH_LONG).show();
+                mList.remove(rxBusTestEvent.getRemoveIndex());
+                mAdapter.notifyDataSetChanged();
             });
     }
 
-    private void initList(List<HomeTestBean> list) {
+    private void initList() {
         if (mAdapter == null) {
             mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
             mRecyclerView.setHasFixedSize(true);
@@ -62,11 +74,11 @@ public class HomeViewModel extends BaseViewModel {
                 .build());
 
             mAdapter = new BaseBindingRecycleViewAdapter<>(mActivity,
-                R.layout.item_test, list, HomeViewModel.this);
+                R.layout.item_test, mList, HomeViewModel.this);
 
             mRecyclerView.setAdapter(mAdapter);
         } else {
-            mAdapter.setDataSource(list).notifyDataSetChanged();
+            mAdapter.setDataSource(mList).notifyDataSetChanged();
         }
     }
 

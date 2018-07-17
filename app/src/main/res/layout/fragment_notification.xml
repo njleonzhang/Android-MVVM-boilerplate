@@ -14,5 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.testRxBus()}"
+            android:text="delete one item in home fragment"/>
     </LinearLayout>
 </layout>

@@ -26,10 +26,4 @@ public class HomeFragment extends BaseVMFragment {
         viewModel.init(binding);
         return binding.getRoot();
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        ButterKnife.bind(this, getView());
-    }
 }

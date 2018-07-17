@@ -3,6 +3,7 @@ Android MVVM boilerplate inspired by [android-boilerplate](https://github.com/ri
 
 ## Archetcture
 ![](https://cdn.rawgit.com/njleonzhang/Android-MVVM-boilerplate/master/assets/archtecure.png)
+
 It's similar to [android-boilerplate](https://github.com/ribot/android-boilerplate#architecture), differences:
 * `Presenter` to `ViewModel`
 * `EventBus` to `RxBus`
@@ -32,11 +33,23 @@ It's similar to [android-boilerplate](https://github.com/ribot/android-boilerpla
 
 ## Details
 
+### MVC / MVP / MVVM
+We support all 3 in this project.
+* Some page is simple, With MVVM, you need create at least 2 new files(class), With MVP, you need more files(class), why not just adopt MVC?
+* Someone in your team, does not love MVVM, and used to work in MVP. OK, **Forced love does not last**.
+* For all 3 architectures, Activity and Fragment are wrapped and easy to initialize.
+
+Check [base](https://github.com/njleonzhang/Android-MVVM-boilerplate/tree/master/app/src/main/java/com/leon/mvvm/ui/base) folder for more details.
+
 ### NetWork
 Leverage `Retrofit2` and `RxJava2` to parse response and handle error(including loading) in common place, we just deal with data in business logic.
+
+Check [DataManager](https://github.com/njleonzhang/Android-MVVM-boilerplate/blob/master/app/src/main/java/com/leon/mvvm/data/DataManager.java) for more details
 
 ### recycle view binding
 No need to write adapter agian and agian, with data-binding and [BaseBindingRecycleViewAdapter](https://github.com/njleonzhang/Android-MVVM-boilerplate/blob/master/app/src/main/java/com/leon/mvvm/utils/BaseBindingRecycleViewAdapter.java), we just need provide a layout file and the array of data, then we get a recycleView
 
-### Activity and Fragment binding
-Activity and Fragment are wrappered and easy to initialize.
+### RxBus
+Leverage `Rxjava` to post none-sticky event, no need to override any Activity method, and really easy and clean to use.
+
+Check [RxBus](https://github.com/njleonzhang/Android-MVVM-boilerplate/blob/master/app/src/main/java/com/leon/mvvm/utils/RxBus.java) for more details.
