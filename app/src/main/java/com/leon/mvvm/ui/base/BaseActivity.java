@@ -52,7 +52,7 @@ public class BaseActivity extends RxAppCompatActivity implements ILoading {
     }
 
     private void preventInitialFocus() {
-        final ViewGroup content = (ViewGroup)this.findViewById(android.R.id.content);
+        final ViewGroup content = this.findViewById(android.R.id.content);
         final View root = content.getChildAt(0);
         if (root == null) return;
         final View focusDummy = new View(this);

@@ -1,9 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.leon.mvvm"
@@ -44,39 +42,40 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildToolsVersion '28.0.2'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
-    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    compile "com.android.support:multidex:$rootProject.supportMultiDexVersion"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:multidex:$rootProject.supportMultiDexVersion"
 
-    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
 
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
 
-    compile "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
 
-    compile "com.trello.rxlifecycle2:rxlifecycle:$rootProject.rxLifecycleVersion"
-    compile "com.trello.rxlifecycle2:rxlifecycle-android:$rootProject.rxLifecycleVersion"
-    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.rxLifecycleVersion"
+    implementation "com.trello.rxlifecycle2:rxlifecycle:$rootProject.rxLifecycleVersion"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-android:$rootProject.rxLifecycleVersion"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.rxLifecycleVersion"
 
-    compile "com.facebook.stetho:stetho:$rootProject.stethoVersion"
-    compile "com.facebook.stetho:stetho-okhttp3:$rootProject.stethoVersion"
+    implementation "com.facebook.stetho:stetho:$rootProject.stethoVersion"
+    implementation "com.facebook.stetho:stetho-okhttp3:$rootProject.stethoVersion"
 
-    compile "com.jakewharton:butterknife:$rootProject.bkVersion"
+    implementation "com.jakewharton:butterknife:$rootProject.bkVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.bkVersion"
 
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-    compile 'com.github.njleonzhang:SimpleItemDecoration:v0.0.2'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.google.code.gson:gson:2.8.1'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    implementation 'com.github.njleonzhang:SimpleItemDecoration:0.0.4'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }
 

@@ -3,14 +3,17 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.2.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'me.tatarka:gradle-retrolambda:3.6.0'
     }
 }
 
@@ -19,6 +22,10 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
@@ -31,12 +38,12 @@ ext {
     // Sdk and tools
     minSdkVersion = 19
     targetSdkVersion = 25
-    compileSdkVersion = 25
+    compileSdkVersion = 28
     buildToolsVersion = '25.0.2'
 
     // App dependencies
-    supportLibraryVersion = '25.3.1'
-    supportMultiDexVersion = '1.0.1'
+    supportLibraryVersion = '28.0.0'
+    supportMultiDexVersion = '1.0.3'
     retrofitVersion = '2.2.0'
     rxjavaVersion = '2.0.7'
     rxandroidVersion = '2.0.1'
@@ -44,5 +51,5 @@ ext {
     rxLifecycleVersion = "2.0.1"
     rxPermissionVersion = "0.9.4@aar"
     stethoVersion = '1.5.0'
-    bkVersion = '8.5.1'
+    bkVersion = '8.6.0'
 }

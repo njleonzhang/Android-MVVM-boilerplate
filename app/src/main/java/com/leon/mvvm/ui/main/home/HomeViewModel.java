@@ -1,5 +1,6 @@
 package com.leon.mvvm.ui.main.home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.databinding.ViewDataBinding;
 import android.support.v4.content.ContextCompat;
@@ -38,6 +39,7 @@ public class HomeViewModel extends BaseViewModel {
         super(context, fragment);
     }
 
+    @SuppressLint("CheckResult")
     void init(ViewDataBinding binding) {
         mBinding = (FragmentHomeBinding) binding;
         mRecyclerView = mBinding.list;
